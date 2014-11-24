@@ -22,6 +22,8 @@
 #ifndef WORD_MATCH_TYPES_H
 #define WORD_MATCH_TYPES_H
 
+#include <stddef.h>
+
 typedef float WMAudioSampleType;
 typedef float WMFeatureType;
 
@@ -56,7 +58,7 @@ typedef struct WMAudioFilePreProcessInfo {
  * could add num mel bands, and num mfccs here as well.
  */
 struct WMMfccConfiguration {
-    Float64 sampling_rate;
+    float sampling_rate;
     size_t window_size;
     float pre_empha_alpha;
     float mel_min_freq;
@@ -73,7 +75,7 @@ enum {
     kWMSessionResultErrorInvalidArgument = 3
 };
 
-typedef SInt16 WMSessionResult;
+typedef int WMSessionResult;
 
 typedef struct opaqueWMSession* WMSessionRef;
 
